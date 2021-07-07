@@ -7,11 +7,11 @@ class TasksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.black,
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.lightBlueAccent,
           elevation: 18,
           hoverElevation: 30,
+          backgroundColor: Color(0xFFEB1555),
           child: Icon(
             Icons.add,
             size: 40,
@@ -38,14 +38,14 @@ class TasksScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.white,
+                  color: Color(0xFFEB1555),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Icon(
                     Icons.list,
                     size: 60,
-                    color: Colors.lightBlueAccent,
+                    color: Colors.black,
                   ),
                 ),
               ),
@@ -56,7 +56,7 @@ class TasksScreen extends StatelessWidget {
                 'Todoey',
                 style: TextStyle(
                   fontSize: 60,
-                  color: Colors.white,
+                  color: Colors.white60,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -67,7 +67,7 @@ class TasksScreen extends StatelessWidget {
                 '12 Tasks',
                 style: TextStyle(
                   fontSize: 23,
-                  color: Colors.white,
+                  color: Color(0xFFEB1555),
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -79,7 +79,7 @@ class TasksScreen extends StatelessWidget {
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
                   ),
-                  color: Colors.white,
+                  color: Colors.white12,
                 ),
                 width: double.infinity,
                 child: Padding(

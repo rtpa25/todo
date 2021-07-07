@@ -6,6 +6,7 @@ class TaskTile extends StatefulWidget {
 }
 
 class _TaskTileState extends State<TaskTile> {
+  // void checkBoxCallBack()
   bool isChecked = false;
 
   @override
