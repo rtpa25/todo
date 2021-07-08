@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:todo/components/task_list.dart';
-import 'package:todo/models/task.dart';
+import 'package:todo/models/task_data.dart';
 import 'add_task_page.dart';
+import 'package:provider/provider.dart';
 
-class TasksScreen extends StatefulWidget {
-  @override
-  _TasksScreenState createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [];
+class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,12 +26,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 child: Container(
                   padding: EdgeInsets.only(
                       bottom: MediaQuery.of(context).viewInsets.top),
-                  child: AddTaskScreen((newTaskTitle) {
-                    setState(() {
-                      tasks.add(Task(name: newTaskTitle));
-                      Navigator.pop(context);
-                    });
-                  }),
+                  child: AddTaskScreen(),
                 ),
               ),
             );
@@ -76,7 +66,7 @@ class _TasksScreenState extends State<TasksScreen> {
             Padding(
               padding: const EdgeInsets.fromLTRB(45, 8, 0, 40),
               child: Text(
-                tasks.length.toString() + ' Tasks',
+                Provider.of<TaskData>(context).taskCount.toString() + ' Tasks',
                 style: TextStyle(
                   fontSize: 23,
                   color: Color(0xFFEB1555),
@@ -96,7 +86,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(35, 20, 20, 20),
-                  child: TaskList(taskList: tasks),
+                  child: TaskList(),
                 ),
               ),
             ),
