@@ -10,8 +10,8 @@ void main() {
 class TodoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<TaskData>(
-      create: (context) => TaskData(),
+    return ChangeNotifierProvider(
+      create: (_) => TaskData(),
       child: MaterialApp(
         theme: ThemeData.dark().copyWith(
           accentColor: Color(0xFFEB1555),
