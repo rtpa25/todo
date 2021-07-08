@@ -5,7 +5,7 @@ import 'package:todo/models/task_data.dart';
 class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String newTask;
+    String newTaskTitle;
     return Container(
       color: Colors.black,
       child: Container(
@@ -28,8 +28,10 @@ class AddTaskScreen extends StatelessWidget {
                 ),
               ),
               TextField(
+                autofocus: true,
+                textAlign: TextAlign.center,
                 onChanged: (newValue) {
-                  newTask = newValue;
+                  newTaskTitle = newValue;
                 },
               ),
               SizedBox(
@@ -41,7 +43,7 @@ class AddTaskScreen extends StatelessWidget {
                 height: 48,
                 onPressed: () {
                   Provider.of<TaskData>(context, listen: false)
-                      .addTask(newTask);
+                      .addTask(newTaskTitle);
                   Navigator.pop(context);
                 },
                 child: Text(
